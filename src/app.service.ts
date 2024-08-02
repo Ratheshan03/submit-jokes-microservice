@@ -47,10 +47,13 @@ export class AppService {
   }
 
   async deleteJoke(jokeId: string): Promise<{ deleted: boolean }> {
+    console.log(`Attempting to delete joke with ID: ${jokeId}`);
     const result = await this.jokeModel.deleteOne({ _id: jokeId }).exec();
     if (result.deletedCount === 0) {
+      console.log(`Joke with ID ${jokeId} not found`);
       throw new NotFoundException('Joke not found');
     }
+    console.log(`Joke with ID ${jokeId} deleted`);
     return { deleted: true };
   }
 }
