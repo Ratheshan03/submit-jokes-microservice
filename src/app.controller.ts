@@ -31,9 +31,6 @@ export class AppController {
     @Param('id') jokeId: string,
     @Body() updateData: Partial<CreateJokeDto>,
   ): Promise<Joke> {
-    // console.log('Received update request for Joke ID:', jokeId);
-    // console.log('Update Data:', updateData);
-
     return this.appService.updateJoke(jokeId, updateData);
   }
 

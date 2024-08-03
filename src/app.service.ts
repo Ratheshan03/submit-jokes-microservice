@@ -21,7 +21,7 @@ export class AppService {
     }
   }
 
-  async getJokes(limit: number = 10): Promise<Joke[]> {
+  async getJokes(limit: number = 50): Promise<Joke[]> {
     return this.jokeModel.find().limit(limit).exec();
   }
 
@@ -29,9 +29,6 @@ export class AppService {
     jokeId: string,
     updateData: Partial<CreateJokeDto>,
   ): Promise<Joke> {
-    // console.log('Updating joke with ID:', jokeId);
-    // console.log('Update Data:', updateData);
-
     const joke = await this.jokeModel.findByIdAndUpdate(
       jokeId,
       { $set: updateData },
@@ -41,8 +38,6 @@ export class AppService {
     if (!joke) {
       throw new NotFoundException('Joke not found');
     }
-
-    console.log('Updated Joke:', joke);
     return joke;
   }
 

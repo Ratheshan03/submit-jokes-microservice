@@ -9,7 +9,9 @@ dotenv.config();
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRoot(
+      'mongodb+srv://ratheshan:rathe03@jokes-db.jnk3auf.mongodb.net/?retryWrites=true&w=majority&appName=jokes-db',
+    ),
     MongooseModule.forFeature([{ name: Joke.name, schema: JokeSchema }]),
   ],
   controllers: [AppController],
