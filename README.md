@@ -31,8 +31,6 @@ This microservice enables users to submit new jokes. They can categorize their s
 $ npm install
 ```
 
-````
-
 ## Running the app
 
 ```bash
@@ -71,11 +69,6 @@ MONGO_URI_PASSWORD=
 Access the Swagger UI to explore the API documentation:
 URL: http://localhost:3002/api
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
 ## License
 
 Nest is [MIT licensed](LICENSE).
-````
